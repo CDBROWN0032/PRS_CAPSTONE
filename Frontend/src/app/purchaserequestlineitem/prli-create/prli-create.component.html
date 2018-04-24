@@ -1,0 +1,29 @@
+<div id='component'>
+  <div id='pagetitle'>
+    <span> {{ pagetitle }}</span>
+  </div>
+    <div class='form-group row' >
+      <label class='col-form-label col-sm-2' for="purchaserequest">Purchase Request:</label>
+      <div class='col-sm-6 select-list'>
+        <select [(ngModel)]='prli.PurchaseRequestId' [compareWith]='compareFn' class='form-control' name='Purchase Request' id='prli-PurchaseRequest'>
+          <option *ngFor="let purchaserequest of purchaserequests" [ngValue]="purchaserequest.Id" [selected]="purchaserequest.Id == prli.PurchaseRequestId"> {{purchaserequest.Description}}</option>
+        </select>
+      </div>
+    </div>
+    <div class='form-group row' >
+      <label class='col-form-label col-sm-2' for="product">Product:</label>
+        <div class='col-sm-6 select-list'>
+          <select [(ngModel)]='prli.ProductId' [compareWith]='compareFn' class='form-control' name='Product' id='prli-Product'>
+            <option *ngFor="let product of products" [ngValue]="product.Id" [selected]="product.Id == prli.ProductId">{{product.Name}}</option>
+          </select>
+        </div>
+    </div>
+    <div class="form-group row">
+      <label class='col-form-label col-sm-2' for="prli.Quantity">Quantity:</label>
+      <input [(ngModel)]='prli.Quantity' name='Quantity' type="number" class="form-control col-sm-6" id="prliQuantity" aria-describedby="QuantityHelp" placeholder="1">
+      <small id="QuantityHelp" class="form-text text-muted col-sm-2">Quantity</small>
+    </div>
+    <div>
+      <button (click)="create()" class="btn btn-warning">Create</button>
+    </div>
+</div>

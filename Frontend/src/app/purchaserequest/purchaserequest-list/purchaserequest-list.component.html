@@ -1,0 +1,41 @@
+<div id='component'>
+  <div id='pagetitle'>
+    <span>{{ pagetitle }} </span> | <a routerLink='/purchaserequests/create'>Create New</a>
+  </div>
+  <div id='content'>
+    <table class='table table-sm'>
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>User</th>
+          <th>Description</th>
+          <th>Justification</th>
+          <th>Delivery Mode</th>
+          <th>Status</th>
+          <th>Total</th>
+          <th>Active</th>
+          <th>Rejection Reason</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor='let pr of purchaserequests'>
+          <td> {{ pr.Id }} </td>
+          <td> {{ pr.User.Username }}</td>
+          <td> {{ pr.Description }} </td>
+          <td> {{ pr.Justification }} </td>
+          <td> {{ pr.DeliveryMode }} </td>
+          <td> {{ pr.Status }} </td>
+          <td> {{ pr.Total | currency}} </td>
+          <td> {{ pr.Active }} </td>
+          <td> {{ pr.ReasonForRejection }} </td>
+            <td>
+              <a routerLink='/purchaserequests/detail/{{pr.Id}}'>Details</a> |
+              <a routerLink='/purchaserequests/edit/{{pr.Id}}'>Edit</a> |
+              <a routerLink='/purchaserequests/lines/{{pr.Id}}'>Lines</a> |
+              <a routerLink='/purchaserequests/reviewitem/{{pr.Id}}'>Review</a>
+            </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

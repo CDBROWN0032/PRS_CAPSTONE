@@ -1,0 +1,43 @@
+DONE ----- BACK END: convert JSON messages entirely
+DONE ----- PRLI-REMOVE: create
+DONE ----- PRLI: total does not subtract correctly // addded prli.quantity2 = 0 to remove();
+DONE ----- PRLI / PURCHASE REQUEST = make list on same page (PRLI-LIST?)
+DONE ----- PRLI-EDIT: productID not found // wrap w/ *ngIf
+DONE ----- REVIEW FUNCTIONALITY
+DONE ----- REMOVE TEST menus
+DONE ----- PRLI Review page
+DONE ----- REMOVE TOTAL FROM EDIT and CREATE
+DONE ----- purchaserequest/lines -- purchase request should be auto selected
+DONE ----- change status to drop down new/pending/approved/rejected
+DONE ----- redirect for PRLI items
+DONE ----- redirect for PRLI edit
+DONE ----- clean up routing page
+DONE ----- login function completed
+DONE ----- implement sysserv to all app components
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+| --- | --- | --- | CURRENT | --- | --- | --- |
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+ShortTerm-----
+
+add auth/guards
+negatives!!!
+purchaserequest/list -- archieve inactive
+PRLI-CREATE = make purcahserequest ID automatic
+reason for rejection alert popup
+
+LongTerm-----
+Add date created?
+Add date updated?
+Insert Dates into menus?
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+ON_HOLD
+Adding dates back into
+  - formatting date add
+BACK END: clean up migrations
+
+/////////////////////////////////////-----BUGS-----/////////////////////////////////////
+
+
+

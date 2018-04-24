@@ -1,0 +1,66 @@
+<div id='component'>
+  <div id='pagetitle' >
+    <span>{{pagetitle}}</span>
+  </div>
+    <div id='content' *ngIf='user'>
+      <div class='form-group row'>
+        <label class='col-form-label col-sm-2' for='userfirstname'> FirstName:</label>
+          <input [(ngModel)]='user.FirstName' name='FirstName' type='text' class='form-control col-sm-6' id='userfirstname'
+           aria-describedby='emailHelp' placeholder='First Name'>
+          <small id='FirstNameHelp' class='form-text text-muted col-sm-2'>The First Name</small>
+      </div>
+      <div class='form-group row'>
+          <label class='col-form-label col-sm-2' for='userlastname'> LastName:</label>
+            <input [(ngModel)]='user.LastName' name='LastName' type='text' class='form-control col-sm-6' id='userlastname'
+             aria-describedby='emailHelp' placeholder='Last Name'>
+            <small id='LastNameHelp' class='form-text text-muted col-sm-2'>The Last Name</small>
+        </div>
+        <div class='form-group row'>
+            <label class='col-form-label col-sm-2' for='userusername'> Username:</label>
+              <input [(ngModel)]='user.Username' name='Username' type='text' class='form-control col-sm-6' id='userusername'
+               aria-describedby='emailHelp' placeholder='Username'>
+              <small id='UsernameHelp' class='form-text text-muted col-sm-2'>The Username</small>
+          </div>
+          <div class='form-group row'>
+            <label class='col-form-label col-sm-2' for='userPassword'> Password:</label>
+              <input [(ngModel)]='user.Password' name='Password' type='text' class='form-control col-sm-6' id='userPassword'
+               aria-describedby='emailHelp' placeholder='Password'>
+              <small id='PasswordHelp' class='form-text text-muted col-sm-2'>The Password</small>
+          </div>
+          <div class='form-group row'>
+              <label class='col-form-label col-sm-2' for='userPhone'> Phone:</label>
+                <input [(ngModel)]='user.Phone' name='Phone' type='text' class='form-control col-sm-6' id='userPhone'
+                 aria-describedby='emailHelp' placeholder='Phone'>
+                <small id='PhoneHelp' class='form-text text-muted col-sm-2'>The Phone</small>
+            </div>
+          <div class='form-group row'>
+            <label class='col-form-label col-sm-2' for='userEmail'> Email:</label>
+              <input [(ngModel)]='user.Email' name='Email' type='text' class='form-control col-sm-6' id='userEmail'
+               aria-describedby='emailHelp' placeholder='Email'>
+              <small id='EmailHelp' class='form-text text-muted col-sm-2'>The Email</small>
+          </div>
+          <div class='form-group row'>
+              <label class='col-form-label col-sm-2' for='userIsReviewer'> IsReviewer:</label>
+                <input [(ngModel)]='user.IsReviewer' name='IsReviewer' type='checkbox' class='form-control col-sm-6' id='userIsReviewer'
+                 aria-describedby='emailHelp' placeholder='IsReviewer'>
+                <small id='IsReviewerHelp' class='form-text text-muted col-sm-2'>Is Reviewer</small>
+            </div>
+            <div class='form-group row'>
+                <label class='col-form-label col-sm-2' for='userIsAdmin'> IsAdmin:</label>
+                  <input [(ngModel)]='user.IsAdmin' name='IsAdmin' type='checkbox' class='form-control col-sm-6' id='userIsAdmin'
+                   aria-describedby='AdminHelp' placeholder='IsAdmin'>
+                  <small id='IsAdminHelp' class='form-text text-muted col-sm-2'>Is Admin</small>
+              </div>
+              <div class='form-group row'>
+                  <label class='col-form-label col-sm-2' for='userActive'> Active:</label>
+                    <input [(ngModel)]='user.Active' name='Active' type='checkbox' class='form-control col-sm-6' id='userActive'
+                     aria-describedby='ActiveHelp' placeholder='IsAdmin'>
+                    <small id='ActiveHelp' class='form-text text-muted col-sm-2'>Is Active</small>
+                </div>
+
+
+      <div>
+        <button (click)='change()' class='btn btn-warning'>Change</button>
+      </div>
+  </div>
+</div>

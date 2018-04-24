@@ -1,0 +1,35 @@
+<div class="pos-f-t">
+    <div class="collapse" id="navbarToggleExternalContent">
+      <div class="bg-dark p-4">
+        <h4 class="text-white">Collapsed content</h4>
+        <span class="text-muted">Toggleable via the navbar brand.</span>
+      </div>
+    </div>
+    <nav class="navbar navbar-dark bg-dark">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </nav>
+  </div>
+
+<nav id='nav_top' class='navbar navbar-dark bg-dark'>
+    <div>
+    <ul>
+      <li style='font-size: 20px;'>PRS Project for Cincy Code IT at MAX Technical Training By: Christopher Brown</li>
+    </ul>
+    </div>
+  </nav>
+  <nav class='navbar navbar-dark bg-dark'>
+  <div>
+  <ul>
+    <li *ngFor="let menu of menuItems">
+        <app-menu-item [menuItem]="menu"></app-menu-item>
+    </li>
+    <li>
+      <button (click)='logout()'>logout</button>
+    </li>
+  </ul>
+
+</div>
+
+</nav>

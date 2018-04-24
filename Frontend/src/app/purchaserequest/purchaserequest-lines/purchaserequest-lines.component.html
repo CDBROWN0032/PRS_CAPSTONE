@@ -1,0 +1,66 @@
+<div id='component'>
+  <div id='pagetitle'>
+    <span>{{ pagetitle }} </span> | <a routerLink='/purchaserequestlineitems/create'>Add To Purchase Request</a>
+  </div>
+
+  <div id='content' *ngIf='pr'>
+    <table class='table table-sm'>
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>User</th>
+          <th>Description</th>
+          <th>Justification</th>
+          <th>Status</th>
+          <th>Total</th>
+          <th>Active</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td> {{ pr.Id }} </td>
+          <td> {{ pr.User.Username }}</td>
+          <td> {{ pr.Description }} </td>
+          <td> {{ pr.Justification }} </td>
+          <td> {{ pr.Status }} </td>
+          <td> {{ pr.Total | currency}} </td>
+          <td> {{ pr.Active }} </td>
+        </tr>
+      </tbody>
+    </table>
+  <hr />
+  <div id='content'>
+    <table class='table table-sm'>
+      <thead>
+        <tr>
+          <th>Id</th>
+          <!-- <th>Purchase Request</th> -->
+          <th>Active</th>
+          <th>Product</th>
+          <th>Quantity</th>
+          <th>Price</th>
+          <th>SubTotal</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor='let prli of pr.PrliList'>
+          <td> {{prli.Id}} </td>
+           <!-- <td> {{ prli.PurchaseRequest.Description }}</td> -->
+          <td> {{ prli.Active }}</td>
+          <td> {{ prli.Product.Name }}</td>
+          <td> {{ prli.Quantity }}</td>
+          <td> {{ prli.Product.Price | currency }}</td>
+          <td> {{ prli.Quantity * prli.Product.Price | currency }} </td>
+            <td>
+              <a routerLink='/purchaserequestlineitems/detail/{{prli.Id}}'>Detail</a> |
+              <a routerLink='/purchaserequestlineitems/edit/{{prli.Id}}'>Edit</a>
+            </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div>
+    <button (click)="submit();" class="btn btn-warning">Submit</button>
+  </div>
+  </div>
+</div>

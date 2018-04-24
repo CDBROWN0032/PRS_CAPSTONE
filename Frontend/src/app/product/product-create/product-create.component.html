@@ -1,0 +1,38 @@
+<div id="component">
+  <div id="pagetitle">
+    <span>{{ pagetitle }}</span>
+  </div>
+  <div id="content" *ngIf="product">
+    <div class="form-group row">
+      <label class='col-form-label col-sm-2' for="productPartNumber">Part Number:</label>
+      <input [(ngModel)]='product.PartNumber' name='PartNumber' type="text" class="form-control col-sm-6" id="productPartNumber" aria-describedby="LastNameHelp" placeholder="PartNumber">
+      <small id="PartNumberHelp" class="form-text text-muted col-sm-2">The PartNumber</small>
+    </div>
+    <div class="form-group row">
+      <label class='col-form-label col-sm-2' for="productName">Name:</label>
+      <input [(ngModel)]='product.Name' name='Name' type="text" class="form-control col-sm-6" id="productName" aria-describedby="NameHelp" placeholder="Name">
+      <small id="NameHelp" class="form-text text-muted col-sm-2">The Name</small>
+    </div>
+    <div class="form-group row">
+      <label class='col-form-label col-sm-2' for="productPrice">Price:</label>
+      <input [(ngModel)]='product.Price' name='Price' type="number" class="form-control col-sm-6" id="productPrice" aria-describedby="PriceHelp" placeholder="Price">
+      <small id="PriceHelp" class="form-text text-muted col-sm-2">The Price</small>
+    </div>
+    <div class="form-group row">
+      <label class='col-form-label col-sm-2' for="Unit">Unit:</label>
+      <input [(ngModel)]='product.Unit' name='Unit' type="text" class="form-control col-sm-6" id="Unit" aria-describedby="UnitHelp" placeholder="Unit">
+      <small id="UnitHelp" class="form-text text-muted col-sm-2">The Unit</small>
+    </div>
+    <div class='form-group row' >
+        <label class='col-form-label col-sm-2' for="productvendor">Vendor:</label>
+      <div class='col-sm-6 select-list'>
+        <select [(ngModel)]='product.VendorId' [compareWith]='compareFn' class='form-control' name='Vendor' id='product-Vendor'>
+          <option *ngFor="let vendor of vendors" [ngValue]="vendor.Id" [selected]="vendor.Id == product.VendorId">{{vendor.Name}}</option>
+        </select>
+      </div>
+    </div>
+    <div>
+      <button (click)="create()" class="btn btn-warning">Create</button>
+    </div>
+  </div>
+</div>

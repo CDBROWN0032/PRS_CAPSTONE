@@ -1,0 +1,37 @@
+<div id='component'>
+  <div id='pagetitle'>
+    <span>{{pagetitle}}</span>
+  </div>
+  <div id='content' *ngIf='pr'>
+    <table class='table table-sm'>
+      <tr>
+        <th>ID</th><td> {{pr.Id}} </td>
+      </tr>
+      <tr>
+        <th>User</th><td> {{pr.User.Username}} </td>
+      </tr>
+      <tr>
+        <th>Description</th><td> {{pr.Description}} </td>
+      </tr>
+      <tr>
+        <th>Justification</th><td> {{pr.Justification}} </td>
+      </tr>
+      <tr>
+        <th>Delivery mode</th><td> {{pr.DeliveryMode}} </td>
+      </tr>
+      <tr>
+        <th>Status</th><td> {{pr.Status}} </td>
+      </tr>
+      <tr>
+        <th>Total</th><td>{{ pr.Total | currency }}</td>
+      </tr>
+      <tr>
+        <th>Active</th><td> {{pr.Active}} </td>
+      </tr>
+      <th>Reason For Rejection</th><td> {{pr.ReasonForRejection}} </td>
+    </table>
+    <a routerLink='/purchaserequests/list' class='btn btn-info'>Back</a>
+    <a routerLink='/purchaserequests/edit/{{pr.Id}}' class='btn btn-warning'>Edit</a>
+    <button (click)='remove()' class='btn btn-danger'>Delete</button>
+  </div>
+</div>

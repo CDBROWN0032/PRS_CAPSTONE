@@ -1,0 +1,33 @@
+<div id="component">
+  <div id="pagetitle">
+    <span>{{ pagetitle }}</span>
+  </div>
+  <div id="content">
+    <table class="table table-sm">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Description</th>
+          <th>Justification</th>
+          <th>Status</th>
+          <th>Total</th>
+          <th>User</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let purchaserequest of purchaserequests">
+          <td>{{ purchaserequest.Id }}</td>
+          <td>{{ purchaserequest.Description }}</td>
+          <td>{{ purchaserequest.Justification }}</td>
+          <td>{{ purchaserequest.Status }}</td>
+          <td>{{ purchaserequest.Total | currency }}</td>
+          <td>{{ purchaserequest.User.Username }}</td>
+          <td>
+            <a routerLink="/purchaserequests/reviewitem/{{purchaserequest.Id}}">Review</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
