@@ -6,6 +6,7 @@ Front End: Angular 5
   - TypeScript
   - HTML
   - CSS
+
 Back End: C# .NET
   - ASP.NET MVC
     - View handled by front end/angular
